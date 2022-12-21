@@ -1,0 +1,38 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.reactnative.template">
+
+    <!-- 🚨 Keep only the permissions used in your app 🚨 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- END -->
+
+    <application
+      android:name=".MainApplication"
+      android:label="@string/ANDROID_APP_NAME"
+      android:icon="@mipmap/ic_launcher"
+      android:roundIcon="@mipmap/ic_launcher_round"
+      android:allowBackup="false"
+      android:theme="@style/AppTheme"
+      android:usesCleartextTraffic="true">
+      <activity
+        android:name=".MainActivity"
+        android:label="@string/ANDROID_APP_NAME"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+        android:launchMode="singleTask"
+        android:windowSoftInputMode="adjustResize"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        <intent-filter>
+          <action android:name="android.intent.action.VIEW" />
+          <category android:name="android.intent.category.DEFAULT" />
+          <category android:name="android.intent.category.BROWSABLE" />
+          <data
+            android:host="app"
+            android:scheme="rnTemplateApp" />
+        </intent-filter>
+      </activity>
+    </application>
+</manifest>
